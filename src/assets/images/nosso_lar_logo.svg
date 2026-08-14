@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 120" width="100%" height="100%">
+  <g fill="#00a7d8">
+    <path d="M 28 32 C 16 12, 44 8, 55 25 C 65 40, 48 65, 32 80 C 18 95, 45 102, 68 85 C 80 76, 75 62, 68 55 C 62 48, 50 55, 42 66 C 35 76, 42 88, 52 86 C 62 84, 70 72, 72 65 C 75 75, 62 92, 48 92 C 30 92, 18 80, 22 65 C 28 48, 48 30, 58 20 C 45 12, 32 18, 28 32 Z" />
+  </g>
+
+  <!-- Precision Ribbon Vector -->
+  <g fill="none" stroke="#00a7d8" stroke-width="11" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 28 48 C 12 25, 35 12, 52 26 C 70 42, 38 78, 24 88 C 15 95, 35 100, 58 88" />
+    <path d="M 22 82 C 38 98, 68 88, 72 62 C 76 42, 55 35, 42 52 C 32 66, 48 88, 68 75" />
+  </g>
+
+  <!-- Brand Typography: NOSSO LAR -->
+  <text x="88" y="65" font-family="'Fredoka', 'Comfortaa', 'Quicksand', 'Filson Soft', 'Poppins', sans-serif" font-weight="900" font-size="54" fill="#00a7d8" letter-spacing="-1">NOSSO LAR</text>
+  
+  <!-- Subtitle: CLÍNICA COMPORTAMENTAL -->
+  <text x="90" y="98" font-family="'Montserrat', 'Poppins', sans-serif" font-weight="700" font-size="18.5" fill="#00a7d8" letter-spacing="4.5">CLÍNICA COMPORTAMENTAL</text>
+</svg>

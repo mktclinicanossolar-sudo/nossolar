@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Jasmine Bloom';
+  src: url('/fonts/Jasmine Bloom.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-jasmine {
+  font-family: 'Jasmine Bloom', cursive, sans-serif;
+}
+
+@layer base {
+  :root {
+    /* Multi-color Pastel Palette */
+    --pastel-blue: #A0C4FF;
+    --pastel-blue-bg: #F0F6FF;
+    --pastel-yellow: #FDE047;
+    --pastel-yellow-bg: #FEFCE8;
+    --pastel-green: #86EFAC;
+    --pastel-green-bg: #F0FDF4;
+    --pastel-red: #FCA5A5;
+    --pastel-red-bg: #FEF2F2;
+    
+    --color-bg-light: #FAFAF8;
+    --color-title: #1E293B;
+    --color-text: #475569;
+  }
+
+  body {
+    font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
+    color: #475569;
+    background-color: #FAFAF8;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    color: #1E293B;
+  }
+}
+
+.font-poppins {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Custom Soft Pastel Badges & Cards */
+.card-pastel-blue {
+  background-color: #F0F6FF;
+  border: 1px solid #BFDBFE;
+}
+
+.card-pastel-yellow {
+  background-color: #FEFCE8;
+  border: 1px solid #FEF08A;
+}
+
+.card-pastel-green {
+  background-color: #F0FDF4;
+  border: 1px solid #BBF7D0;
+}
+
+.card-pastel-red {
+  background-color: #FEF2F2;
+  border: 1px solid #FECACA;
+}
+
+/* Simple Clean Card - Flat & Modern */
+.clean-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 1rem;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FAFAF8;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+

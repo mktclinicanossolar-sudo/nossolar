@@ -1,0 +1,6 @@
+{
+  "name": "Clínica Nosso Lar",
+  "description": "Clínica especializada em Terapia ABA, Fonoaudiologia e Integração Sensorial para desenvolvimento infantil de excelência.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
