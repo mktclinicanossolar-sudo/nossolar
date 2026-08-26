@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X, Calendar } from 'lucide-react';
+import { Menu, X, Calendar, Briefcase } from 'lucide-react';
 import { Logo } from './Logo';
 
 interface HeaderProps {
   onOpenAppointment: () => void;
+  onOpenCareers: () => void;
 }
 
-export const Header: React.FC<HeaderProps> = ({ onOpenAppointment }) => {
+export const Header: React.FC<HeaderProps> = ({ onOpenAppointment, onOpenCareers }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -55,7 +56,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAppointment }) => {
           </a>
 
           {/* Navigation Menu */}
-          <nav className="hidden lg:flex items-center gap-7">
+          <nav className="hidden lg:flex items-center gap-6 xl:gap-7">
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -66,13 +67,22 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAppointment }) => {
                 {link.name}
               </a>
             ))}
+
+            {/* Trabalhe Conosco Button */}
+            <button
+              onClick={onOpenCareers}
+              className="text-xs font-semibold text-sky-700 hover:text-sky-800 bg-sky-50 hover:bg-sky-100/80 px-3 py-1.5 rounded-full border border-sky-200/70 transition-all flex items-center gap-1.5 cursor-pointer"
+            >
+              <Briefcase className="w-3.5 h-3.5 text-sky-600" />
+              <span>Trabalhe Conosco</span>
+            </button>
           </nav>
 
           {/* CTA Right */}
           <div className="hidden sm:flex items-center gap-3">
             <button
               onClick={onOpenAppointment}
-              className="px-5 py-2.5 rounded-md bg-sky-600 hover:bg-sky-500 text-white font-semibold text-xs transition-colors flex items-center gap-2 shadow-xs"
+              className="px-5 py-2.5 rounded-md bg-sky-600 hover:bg-sky-500 text-white font-semibold text-xs transition-colors flex items-center gap-2 shadow-xs cursor-pointer"
             >
               <Calendar className="w-4 h-4" />
               <span>Agendar Avaliação</span>
@@ -82,7 +92,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAppointment }) => {
           {/* Mobile Toggle */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 text-slate-700 bg-slate-50 border border-slate-200 rounded-md"
+            className="lg:hidden p-2 text-slate-700 bg-slate-50 border border-slate-200 rounded-md cursor-pointer"
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -110,13 +120,26 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAppointment }) => {
                   {link.name}
                 </a>
               ))}
+
+              {/* Trabalhe Conosco Mobile */}
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  onOpenCareers();
+                }}
+                className="w-full py-2.5 text-left text-sm font-semibold text-sky-700 hover:text-sky-800 flex items-center gap-2 border-b border-slate-100 cursor-pointer"
+              >
+                <Briefcase className="w-4 h-4 text-sky-600" />
+                <span>Trabalhe Conosco</span>
+              </button>
+
               <div className="pt-3">
                 <button
                   onClick={() => {
                     setMobileMenuOpen(false);
                     onOpenAppointment();
                   }}
-                  className="w-full py-3 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-semibold text-sm flex items-center justify-center gap-2"
+                  className="w-full py-3 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-semibold text-sm flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <Calendar className="w-4 h-4" />
                   <span>Agendar Avaliação</span>

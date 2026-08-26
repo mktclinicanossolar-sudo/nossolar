@@ -86,3 +86,15 @@ export interface DifferentialItem {
   iconName: string;
   highlight: string;
 }
+
+export interface JobItem {
+  id: string;
+  title: string;
+  location: string;
+  contractType: string;
+  availability: string;
+  requirements: string[];
+  differentials?: string[];
+  description?: string;
+  whatsappMessage: string;
+}

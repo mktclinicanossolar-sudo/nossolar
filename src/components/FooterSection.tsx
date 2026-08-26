@@ -1,8 +1,12 @@
 import React from 'react';
-import { ArrowUp, ShieldCheck } from 'lucide-react';
+import { ArrowUp, ShieldCheck, Briefcase } from 'lucide-react';
 import { Logo } from './Logo';
 
-export const FooterSection: React.FC = () => {
+interface FooterSectionProps {
+  onOpenCareers?: () => void;
+}
+
+export const FooterSection: React.FC<FooterSectionProps> = ({ onOpenCareers }) => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -33,6 +37,17 @@ export const FooterSection: React.FC = () => {
               <li><a href="#services" className="hover:text-sky-600 transition-colors inline-block py-0.5">Especialidades</a></li>
               <li><a href="#gallery" className="hover:text-sky-600 transition-colors inline-block py-0.5">Nossa Galeria</a></li>
               <li><a href="#contact" className="hover:text-sky-600 transition-colors inline-block py-0.5">Localização & Contato</a></li>
+              {onOpenCareers && (
+                <li>
+                  <button 
+                    onClick={onOpenCareers}
+                    className="hover:text-sky-600 font-semibold text-sky-700 transition-colors inline-flex items-center gap-1.5 py-0.5 cursor-pointer"
+                  >
+                    <Briefcase className="w-3 h-3 text-sky-600" />
+                    <span>Trabalhe Conosco (Vagas)</span>
+                  </button>
+                </li>
+              )}
             </ul>
           </div>
 

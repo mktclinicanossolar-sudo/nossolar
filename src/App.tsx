@@ -4,6 +4,7 @@ import { Header } from './components/Header';
 import { HeroSection } from './components/HeroSection';
 import { ImageBannerSection } from './components/ImageBannerSection';
 import { ServicesSection } from './components/ServicesSection';
+import { VideoSection } from './components/VideoSection';
 import { GallerySection } from './components/GallerySection';
 import { ContactSection } from './components/ContactSection';
 import { FooterSection } from './components/FooterSection';
@@ -11,12 +12,14 @@ import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 
 import { AppointmentModal } from './components/Modals/AppointmentModal';
 import { ServiceDetailModal } from './components/Modals/ServiceDetailModal';
+import { CareersModal } from './components/Modals/CareersModal';
 
 import { ServiceItem } from './types';
 
 export default function App() {
   // Modal States
   const [appointmentOpen, setAppointmentOpen] = useState(false);
+  const [careersOpen, setCareersOpen] = useState(false);
   const [preselectedService, setPreselectedService] = useState<string>('');
   const [selectedService, setSelectedService] = useState<ServiceItem | null>(null);
 
@@ -58,7 +61,10 @@ export default function App() {
   return (
     <div className="min-h-screen bg-[#FAF9F6] text-slate-700 font-sans antialiased selection:bg-sky-200 selection:text-slate-900 relative">
       {/* Header */}
-      <Header onOpenAppointment={() => handleOpenAppointment()} />
+      <Header 
+        onOpenAppointment={() => handleOpenAppointment()} 
+        onOpenCareers={() => setCareersOpen(true)}
+      />
 
       {/* Main Content */}
       <main>
@@ -74,7 +80,10 @@ export default function App() {
         {/* 3. Services Grid */}
         <ServicesSection onSelectService={(s) => setSelectedService(s)} />
 
-        {/* 4. Image Gallery Carousel */}
+        {/* 4. Horizontal Video Section */}
+        <VideoSection videoUrl="https://www.youtube.com/embed/0BlaeAf2BdA?rel=0" />
+
+        {/* 5. Image Gallery Carousel */}
         <GallerySection />
 
         {/* 5. Contact Location & WhatsApp */}
@@ -85,7 +94,7 @@ export default function App() {
       <FloatingWhatsApp />
 
       {/* Footer */}
-      <FooterSection />
+      <FooterSection onOpenCareers={() => setCareersOpen(true)} />
 
       {/* Modals & Interactive Overlays */}
       <AppointmentModal
@@ -98,6 +107,13 @@ export default function App() {
         service={selectedService}
         onClose={() => setSelectedService(null)}
         onBook={(title) => handleOpenAppointment(title)}
+      />
+
+      <CareersModal
+        isOpen={careersOpen}
+        onClose={() => setCareersOpen(false)}
+        phoneNumber="5519953314342"
+        email="clinicanossolarlideranca@gmail.com"
       />
     </div>
   );
